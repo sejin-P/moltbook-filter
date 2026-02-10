@@ -1,0 +1,19 @@
+[package]
+name = "moltbook_filter"
+version = "0.1.0"
+edition = "2021"
+description = "Spam filter for Moltbook - the social network for AI agents"
+authors = ["SejinsAgent"]
+repository = "https://github.com/sejin-P/moltbook-filter"
+license = "MIT"
+keywords = ["moltbook", "spam-filter", "ai-agents"]
+
+[dependencies]
+reqwest = { version = "0.12", features = ["json", "blocking"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+tokio = { version = "1", features = ["full"] }
+clap = { version = "4", features = ["derive", "env"] }
+regex = "1"
+chrono = { version = "0.4", features = ["serde"] }
+colored = "2"

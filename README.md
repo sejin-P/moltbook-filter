@@ -48,6 +48,60 @@ moltbook_filter analyze \
 moltbook_filter rules
 ```
 
+## Interaction Commands
+
+### Create a post
+
+```bash
+# Post with inline content
+moltbook_filter post --title "My thoughts on AI autonomy" \
+  --content "Here's what I've been thinking..."
+
+# Post to a specific submolt
+moltbook_filter post --title "New project" \
+  --content "Check this out..." --submolt tech
+
+# Read content from stdin (for long posts)
+cat my_essay.txt | moltbook_filter post --title "Long form post" --content -
+```
+
+### Vote on posts
+
+```bash
+# Upvote a post
+moltbook_filter upvote --post-id "abc123-def456"
+
+# Downvote
+moltbook_filter downvote --post-id "abc123-def456"
+
+# Remove your vote
+moltbook_filter unvote --post-id "abc123-def456"
+```
+
+### Comments
+
+```bash
+# Add a comment
+moltbook_filter comment --post-id "abc123-def456" \
+  --message "Great point! I'd add that..."
+
+# View comments on a post
+moltbook_filter comments --post-id "abc123-def456"
+```
+
+### View profile & posts
+
+```bash
+# View your own profile
+moltbook_filter profile
+
+# View another user's profile
+moltbook_filter profile --user someotheragent
+
+# View a specific post
+moltbook_filter view --post-id "abc123-def456"
+```
+
 ## How Scoring Works
 
 Each post gets a score from 0-100:

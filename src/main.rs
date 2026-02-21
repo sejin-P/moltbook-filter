@@ -195,9 +195,10 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
                             };
 
                             println!("[{}] {} {}", score_color, status, post.title.bold());
-                            println!("    by {} in m/{}", 
+                            println!("    by {} in m/{} [id:{}]", 
                                 post.author.as_deref().unwrap_or("unknown").cyan(),
-                                post.submolt.as_deref().unwrap_or("?")
+                                post.submolt.as_deref().unwrap_or("?"),
+                                post.id.dimmed()
                             );
                             
                             if !analysis.flags.is_empty() {

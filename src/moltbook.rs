@@ -246,10 +246,10 @@ impl MoltbookClient {
             title: &'a str,
             content: &'a str,
             #[serde(skip_serializing_if = "Option::is_none")]
-            submolt: Option<&'a str>,
+            submolt_name: Option<&'a str>,
         }
 
-        let body = CreatePostRequest { title, content, submolt };
+        let body = CreatePostRequest { title, content, submolt_name: submolt };
 
         let mut headers = self.auth_headers();
         headers.insert(CONTENT_TYPE, HeaderValue::from_static("application/json"));
